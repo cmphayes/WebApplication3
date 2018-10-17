@@ -154,6 +154,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\contact_me.php" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -192,8 +193,11 @@
     <Content Include="img\portfolio\cake.png" />
     <Content Include="img\portfolio\CalculatorStockPhoto.jpeg" />
     <Content Include="img\portfolio\circus.png" />
+    <Content Include="img\portfolio\Conall Hayes_bw.jpg" />
     <Content Include="img\portfolio\ExcalmationMarkStockPhoto.png" />
+    <Content Include="img\portfolio\Exclamation_mark_red.png" />
     <Content Include="img\portfolio\game.png" />
+    <Content Include="img\portfolio\palindromePic.png" />
     <Content Include="img\portfolio\safe.png" />
     <Content Include="img\portfolio\StockQuestionMarkPhoto.jpg" />
     <Content Include="img\portfolio\submarine.png" />
