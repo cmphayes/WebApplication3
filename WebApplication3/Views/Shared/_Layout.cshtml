@@ -1,92 +1,102 @@
-﻿
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta charset="utf-6">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>CMPH Portfolio</title>
 
+    <!--Syntax Highlighter-->
+    <script src="~/Scripts/SyntaxHighlighter/scripts/shCore.js"></script>
+    <script src="~/Scripts/SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/freelancer.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/SyntaxHighlighter/shCore.css" rel="stylesheet" />
+    <link href="~/Content/SyntaxHighlighter/shThemeDefault.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="icon" href="~/img/FaviconImage.png" />
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+<body id="page-top" class="index">
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>Menu<i class="fa fa-bars"></i>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand" href="#page-top">Conall Hayes</a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("GridDemo", "GridDemo", "Home")</li>
-                    <li>@Html.ActionLink("JS", "JS", "Home")</li>
-                    <li>@Html.ActionLink("Index", "Index", "Home")</li>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top">Conall Hayes</a>modal
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">Projects</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://blogproject2.azurewebsites.net" target="_blank" />My Blog Website</a>
+                    </li>
                 </ul>
             </div>
+            <!-- /.navbar-collapse -->
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+        <!-- /.container-fluid -->
+    </nav>
 
-    
-    </div>
+    <section id="main-content">
+        <section class="wrapper">
+            @RenderBody()
+        </section>
+    </section>
+
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="~/Scripts/jqBootstrapValidation.js"></script>
+    <script src="~/Scripts/contact_me.js"></script>
 
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-
-
+    <!-- Theme JavaScript -->
+    <script src="~/Scripts/freelancer.min.js"></script>
     <script src="~/Scripts/JavaScript.js"></script>
 
-    @RenderSection("scripts", required: false)
+    <!--Sweetalert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
+    <script>
+        SyntaxHighlighter.all();
+    </script>
 
 </body>
 </html>
-
-@section scripts {
-
-    <script>
-
-        $("#btnCalc").click(function () {
-            var num1 = Number($("#num1").val());
-            var num2 = Number($("#num2").val());
-            var num3 = Number($("#num3").val());
-            var num4 = Number($("#num4").val());
-            var num5 = Number($("#num5").val());
-
-            var sum = num1 + num2 + num3 + num4 + num5;
-            var product = num1 * num2 * num3 * num4 * num5;
-            var mean = sum / 5;
-            var min = Math.min(num1, num2, num3, num4, num5);
-            var max = Math.max(num1, num2, num3, num4, num5);
-
-            $("#output1").text("The sum of your numbers is " + sum);
-            $("#output2").html("The <b>product</b> of your numbers is <b>" + product + "</b>");
-            $("#output3").html("The <b>mean</b> of your numbers is <b>" + mean + "</b>");
-            $("#output4").html("The <b>minimum</b> number entered is <b>" + min + "</b>");
-            $("#output5").html("The <b>maximum</b> number entered is <b>" + max + "</b>");
-        });
-
-        $("#btnClear").click(function () {
-            $("#num1, #num2, #num3, #num4, #num5").val("");
-            $("#output1, #output2, #output3, #output4, #output5").html("");
-        });
-    </script>
-
-}
-
-    <script src="~/Scripts/JavaScript.js"></script>

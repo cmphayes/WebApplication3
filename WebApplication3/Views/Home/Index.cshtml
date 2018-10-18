@@ -1,7 +1,6 @@
 ﻿@{
     Layout = null;
 }
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,20 +11,16 @@
     <meta name="author" content="">
     <title>CMPH Portfolio</title>
 
-
     <!--Syntax Highlighter-->
     <script src="~/Scripts/SyntaxHighlighter/scripts/shCore.js"></script>
     <script src="~/Scripts/SyntaxHighlighter/scripts/shBrushJScript.js"></script>
 
-
     <!-- Bootstrap Core CSS -->
-
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/freelancer.min.css" rel="stylesheet" />
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Content/SyntaxHighlighter/shCore.css" rel="stylesheet" />
     <link href="~/Content/SyntaxHighlighter/shThemeDefault.css" rel="stylesheet" />
-
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -45,7 +40,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle navigation</span>Menu<i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="#page-top">Conall Hayes</a>
             </div>
@@ -56,13 +51,16 @@
                         <a href="#page-top">Conall Hayes</a>modal
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Project Links</a>
+                        <a href="#portfolio">Projects</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#about">About</a>
                     </li>
-                    <li class="">
-                        <a href="#ContactModal" class="portfolio-link" data-toggle="modal">Contact</a>
+                    <li>
+                        @Html.ActionLink("Contact", "Contact", "Home")
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://blogproject2.azurewebsites.net" target="_blank" />My Blog Website</a>
                     </li>
                 </ul>
             </div>
@@ -70,7 +68,6 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
     <!-- Header -->
     <header>
         <div class="container">
@@ -86,51 +83,60 @@
             </div>
         </div>
     </header>
-
     <!-- Portfolio Grid Section -->
     <section id="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Conall's Portfolio</h2>
+                    <h2>Projects</h2>
                     <hr class="star-primary">
                 </div>
             </div>
+            <hr />
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="caption-content">
-                        <button type="button" class="btn btn-primary btn-lg-12"><a href="https://blogproject2.azurewebsites.net" target="_blank" />Link To My Personal Blog Website</button>
-                    </div>
+                <div class="col-sm-6 portfolio-item">
+                    <h4 class="text-center">Blog</h4>
+                    <a href="https://blogproject2.azurewebsites.net" class="portfolio-link" target="_blank">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-1x">My Personal Blog</i>
+                                <p>A Blog Website Constructed Using C#, Html, and Js</p>
+                            </div>
+                        </div>
+                        <img src="~/img/blog stock mouse.jpg" class="img-responsive" width="600" height="500" alt="">
+                    </a>
+                </div>
+
+                <div class="col-sm-6 portfolio-item">
+                    <h4 class="text-center">Bug Tracker</h4>
+                    <a href="https://cmphbugtracker.azurewebsites.net" class="portfolio-link" target="_blank">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-1x">Bug Tracker Website</i>
+                                <p>A Bug Tracker Website Constructed Using C#, Html, and Js</p>
+                            </div>
+                        </div>
+                        <img src="~/img/bug stock image.jpg" class="img-responsive" width="600" height="500" alt="">
+                    </a>
                 </div>
             </div>
             <hr />
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="caption-content">
-                        <button type="button" class="btn btn-primary btn-lg-12">
-                            <a href="https://cmphbugtracker.azurewebsites.net" target="_blank" />Link To My Personal Bug Tracker Website
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <br />
-            <hr />
-
-            <div class="row">
-
                 <div class="col-sm-3 portfolio-item">
-                    <a href="#MathModal" class="portfolio-link" data-toggle="modal">
+                    <h4 class="text-center">Fizz Buzz</h4>
+                    <a href="#FizzBuzzModal" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-1x">Math Problems</i>
-                                <p>Calculates Sum, Mean, Largest Number, Smallest Number, and Average of 5 User Entered Numbers</p>
+                                <p>Determines Which Numbers From 1 To 100 Are Divisable By 2 User Entered Numbers</p>
                             </div>
                         </div>
-                        <img src="~/img/portfolio/CalculatorStockPhoto.jpeg" class="img-responsive" width="300" alt="">
+                        <img src="~/img/portfolio/BeeStockPhoto.jpg" class="img-responsive" width="300" alt="">
                     </a>
                 </div>
 
                 <div class="col-sm-3 portfolio-item">
+                    <h4 class="text-center">Palindrome Tester</h4>
                     <a href="#PalindromeModal" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
@@ -143,6 +149,7 @@
                 </div>
 
                 <div class="col-sm-3 portfolio-item">
+                    <h4 class="text-center">Factorial Finder</h4>
                     <a href="#FactorialModal" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
@@ -150,32 +157,91 @@
                                 <p>Calculates the Factorial of a User Entered Number 5!=5*4*3*2*1 </p>
                             </div>
                         </div>
-
-                        <img src="~/img/portfolio/Exclamation_mark_red.png" / class="img-responsive" width="300" alt="">
+                        <img src="~/img/portfolio/Exclamation_mark_red.png" class="img-responsive" width="300" alt="">
                     </a>
                 </div>
 
                 <div class="col-sm-3 portfolio-item">
-                    <a href="#FizzBuzzModal" class="portfolio-link" data-toggle="modal">
+                    <h4 class="text-center">Math Equations</h4>
+                    <a href="#MathModal" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
-                                <i class="fa fa-1x">FizzBuzz</i>
-                                <p>Determines Which Numbers from 1 to 100 are Divisable by Either One or Both User Entered Numbers</p>
+                                <i class="fa fa-1x">Math Problems</i>
+                                <p>Calculates Sum, Mean, Largest Number, Smallest Number, and Average of 5 User Entered Numbers</p>
                             </div>
                         </div>
-                        <img src="~/img/portfolio/BeeStockPhoto.jpg" class="img-responsive" width="300" alt="">
+                        <img src="~/img/portfolio/CalculatorStockPhoto.jpeg" class="img-responsive" width="300" alt="">
                     </a>
                 </div>
             </div>
-
+            <hr />
             <div class="row">
+                <div class="col-sm-6 portfolio-item">
+                    <a href="" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-1x"></i>
+                                <p></p>
+                            </div>
+                        </div>
+                        <img src="" class="img-responsive" width="300" alt="">
+                    </a>
+                </div>
 
+                <div class="col-sm-6 portfolio-item">
+                    <a href="" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-1x"></i>
+                                <p></p>
+                            </div>
+                        </div>
+                        <img src="" class="img-responsive" width="300" alt="">
+                    </a>
+                </div>
             </div>
+            <hr />
+            <div class="row">
+                <div class="col-sm-4 portfolio-item">
+                    <a href="" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-1x"></i>
+                                <p></p>
+                            </div>
+                        </div>
+                        <img src="" class="img-responsive" width="300" alt="">
+                    </a>
+                </div>
 
+                <div class="col-sm-4 portfolio-item">
+                    <a href="" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-1x"></i>
+                                <p></p>
+                            </div>
+                        </div>
+                        <img src="" class="img-responsive" width="300" alt="">
+                    </a>
+                </div>
+
+                <div class="col-sm-4 portfolio-item">
+                    <a href="" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-1x"></i>
+                                <p></p>
+                            </div>
+                        </div>
+                        <img src="" class="img-responsive" width="300" alt="">
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
-
     @*About*@
+
     <section class="success" id="about">
         <div class="container">
             <div class="row">
@@ -185,24 +251,24 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-centered-8">
+                <div class="col-lg-centered-8"
+                    <h5>Welcome to my portfolio!</h5>
                     <h5>On this site you can see a few of the projects I have created during my time at Coder Foundry.</h5>
-                    <hr />
-                    <p>First is a custom blog site equipped with User Login/Registery, SMTP abilities, Blog creation and edit, and a Blog Comments section.</p>
-                    <hr />
-                    <p>The next item in my portfolio page is a bug tracker website that builds on the skills learned while constructing my previously mentiond blog site. Included in the features is the ability to create, edit, and delete Projects, Tickets, Comments and Histories.</p>
-                    <hr />
-                    <p>My final four projects are a Math Calculator that preforms simple equations, a Palindrome tester, a Factorial Calculator, and a program named FizzBuzz that determines which numbers between 1 and 100 are divisible by user entered numbers.</p>
-                    <hr />
-
+                    <hr/>
+                    <h5>First is a custom blog site equipped with User Login/Registery, SMTP abilities, Blog creation and edit, and a Blog Comments section.</h5>
+                    <h5>The next item in my portfolio page is a bug tracker website that builds on the skills learned while constructing my previously mentiond blog site. Included in the features is the ability to create, edit, and delete Projects, Tickets, Comments and Histories.</h5>
+                    <h5>My final four projects are a Math Calculator that preforms simple equations, a Palindrome tester, a Factorial Calculator, and a program named FizzBuzz that determines which numbers between 1 and 100 are divisible by user entered numbers.</h5>
+                    <hr/>
+                    <h5>A little bit about me.</h5>
+                    <h5>I am a junior developer currently studying at Coder Foundry in Kernervsille....</h5>
                 </div>
                 <div class="col-lg-4">
                     <p></p>
                 </div>
                 @*<div class="col-lg-8 col-lg-offset-2 text-center">
-                        <a href="#" class="btn btn-lg btn-outline">
-                            <i class="fa fa-download"></i>
-                        </a>
+                          <a href="#" class="btn btn-lg btn-outline">
+                              <i class="fa fa-download"></i>
+                          </a>
                     </div>*@
             </div>
         </div>
@@ -253,69 +319,60 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <h1>Math</h1>
+                    <h2>Math</h2>
+                    <h5>Enter Five Numbers And Hit Calculate. The Program Will Find The Mean, The Sum, The Product, The Min, And The Max Of The Numbers</h5>
                     <hr />
-                        <div class="form-group">
-                            <div class="col-centered-sm-12">
-                                <br />
-                                <div class="btn-group">
-                                    <button id="btnCalc" type="button" class="btn btn-primary">Calculate</button>
-                                    <button id="btnClear" type="button" class="btn btn-primary">Clear</button>
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal"> Close</button>
-                                    <button id="btnShowMathCode" type="button" class="btn btn-primary">Show Code<span class="caret"></span></button>
-                                </div>
+                    <div class="form-group">
+                        <div class="col-centered-sm-12">
+                            <br />
+                            <div class="btn-group">
+                                <button id="btnCalc" type="button" class="btn btn-primary">Calculate</button>
+                                <button id="btnClearMath" type="button" class="btn btn-primary">Clear</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"> Close</button>
+                                <button id="btnShowMathCode" type="button" class="btn btn-primary">ShowCode<span class="caret"></span></button>
                             </div>
                         </div>
-                    <div class="row">
-                        <div class="col-md-6">
-
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="number" class="form-control" id="num1" placeholder="Enter number 1">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="number" class="form-control" id="num1" placeholder="Enter number 1">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="number" class="form-control" id="num2" placeholder="Enter number 2">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="number" class="form-control" id="num3" placeholder="Enter number 3">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="number" class="form-control" id="num4" placeholder="Enter number 4">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="number" class="form-control" id="num5" placeholder="Enter number 5">
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="number" class="form-control" id="num2" placeholder="Enter number 2">
-                                </div>
+                            <div class="col-md-6">
+                                <div class="row"><p id="output1"></p></div>
+                                <div class="row"><p id="output2"></p></div>
+                                <div class="row"><p id="output3"></p></div>
+                                <div class="row"><p id="output4"></p></div>
+                                <div class="row"><p id="output5"></p></div>
                             </div>
-
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="number" class="form-control" id="num3" placeholder="Enter number 3">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="number" class="form-control" id="num4" placeholder="Enter number 4">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="number" class="form-control" id="num5" placeholder="Enter number 5">
-                                </div>
-                            </div>
-
                         </div>
-
-                        <div class="col-md-6">
-                            <div class="row"><p id="output1"></p></div>
-                            <div class="row"><p id="output2"></p></div>
-                            <div class="row"><p id="output3"></p></div>
-                            <div class="row"><p id="output4"></p></div>
-                            <div class="row"><p id="output5"></p></div>
-                        </div>
-
-                    </div>
-                    <hr />
-                    <br />
-
-                    <div class="row" id="MathCode">
-                        <div class="col-sm-12">
-                            <pre class="brush: js">
+                        <br />
+                        <br />
+                        <div class="row" id="MathCode">
+                            <div class="col-sm-12">
+                                <pre class="brush: js">
                                    $("#btnCalc").click(function () {
 
                                    var num1 = $("#num1").val();
@@ -346,13 +403,13 @@
                                    }
                                    });
                             </pre>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 
     <!--opens palindrome data enter-->
     <div class="portfolio-modal modal fade" id="PalindromeModal" role="dialog">
@@ -366,36 +423,36 @@
                 </div>
                 <div class="modal-body">
                     <h2>Palindrome</h2>
-                    <hr/>
+                    <h5>Enter A Word And Hit Test Word. The Program Will Determine If Your Word Is A Palindrome.</h5>
+                    <hr />
                     <div class="form-group">
                         <div class=" col-centered-sm-6">
                             <div class="btn-group">
                                 <button id="btnPal" href="#PalModal" type="button" class="btn btn-primary">TestWord</button>
-                                <button id="btnClear" type="button" class="btn btn-primary">Clear</button>
+                                <button id="btnClearPal" type="button" class="btn btn-primary">Clear</button>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"> Close</button>
-                                <button id="btnShowPalCode" type="button" class="btn btn-primary">Hide Code<span class="caret"></span></button>
+                                <button id="btnShowPalCode" type="button" class="btn btn-primary">ShowCode<span class="caret"></span></button>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="text" class="form-control" id="PalindromeWord" placeholder="Enter Word">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" id="PalindromeWord" placeholder="Enter Word">
+                                    </div>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="row"><p id="palout"></p></div>
+                            </div>
+                            <div class="col-md-3">
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="row"><p id="palout"></p></div>
-                        </div>
-                        <div class="col-md-3">
-                        </div>
-                    </div>
-                    <br />
-                    <br />
-                    <div class="row" id="PalCode">
-                        <div class="col-centered-sm-12">
-                            <pre class="brush: js">
+                        <br />
+                        <br />
+                        <div class="row" id="PalCode">
+                            <div class="col-centered-sm-12">
+                                <pre class="brush: js">
                                                     $("#btnPal").click(function () {
                                                         var word = $("#PalindromeWord").val();
                                                         var revWord = "";
@@ -422,8 +479,8 @@
                                                     });
                         </pre>
 
+                            </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -442,14 +499,15 @@
                 </div>
                 <div class="modal-body">
                     <h2>Factorial</h2>
-                    <hr/>
+                    <h5>Enter A Number And Hit "FindFactorial". The Program Will Determine The Factorial Of Your Number.</h5>
+                    <hr />
                     <div class="form-group">
                         <div class="col-centered-sm-6">
                             <div class="btn-group">
                                 <button id="btnFact" type="button" class="btn btn-primary">Find Factorial</button>
-                                <button id="btnClear" type="button" class="btn btn-primary">Clear</button>
+                                <button id="btnClearFact" type="button" class="btn btn-primary">Clear</button>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"> Close</button>
-                                <button id="btnShowFactCode" type="button" class="btn btn-primary">Show Code<span class="caret"></span></button>
+                                <button id="btnShowFactCode" type="button" class="btn btn-primary">ShowCode<span class="caret"></span></button>
                             </div>
                         </div>
                         <div class="row">
@@ -508,43 +566,43 @@
                 </div>
                 <div class="modal-body">
                     <h2>FizzBuzz</h2>
+                    <h5>Enter Two Numbers And Click "FizzBuzz". The Program Will Find All Numbers From 1 To 100 That Are Divisable By Each Number.</h5>
                     <hr />
                     <div class="form-group">
                         <div class="col-centered-sm-6">
                             <div class="btn-group">
                                 <button id="btnFB" type="button" class="btn btn-primary">FizzBuzz</button>
-                                <button id="btnClear" type="button" class="btn btn-primary">Clear</button>
+                                <button id="btnClearFizzBuzz" type="button" class="btn btn-primary">Clear</button>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"> Close</button>
-                                <button id="btnShowFizzBuzzCode" type="button" class="btn btn-primary">Show Code<span class="caret"></span></button>
+                                <button id="btnShowFizzBuzzCode" type="button" class="btn btn-primary">ShowCode<span class="caret"></span></button>
                             </div>
                         </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <input type="number" class="form-control" id="FizzNum" placeholder="Enter Fizz Number">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <input type="number" class="form-control" id="BuzzNum" placeholder="Enter Buzz Number">
-                                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="number" class="form-control" id="FizzNum" placeholder="Enter Fizz Number">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <p id="FizzBuzzOut"></p>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="number" class="form-control" id="BuzzNum" placeholder="Enter Buzz Number">
                                     </div>
-                                </div>
-                                <div class="col-md-3">
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <p id="FizzBuzzOut"></p>
+                                </div>
                             </div>
-                            <br />
-                            <br />
-                            <div class="row" id="FizzBuzzCode">
-                                <div class="col-lg-centered-8">
-                                    <pre class="brush: js">
+                            <div class="col-md-3">
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="row" id="FizzBuzzCode">
+                            <div class="col-lg-centered-8">
+                                <pre class="brush: js">
                                                 $("#btnFB").click(function () {
 
                                                     var FizzNum = $("#FizzNum").val();
@@ -582,13 +640,13 @@
                                                     }
                                                 });
                         </pre>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
     </div>
-
 
     <!-- opens about modal -->
     <div class="portfolio-modal modal" id="AboutModal" role="dialog">
@@ -684,8 +742,6 @@
         </div>
     </div>
 
-
-
     <!-- jQuery -->
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 
@@ -715,6 +771,22 @@
 </body>
 </html>
 
+
+
+@section scripts {
+    @if (TempData.ContainsKey("status"))
+    {
+        if (TempData["status"].ToString() == "success")
+        {
+            <script>swal("Your message has been sent", "success");</script>
+        }
+
+        if (TempData["status"].ToString() == "error")
+        {
+            <script>swal("There was a problem sending your message", "error");</script>
+        }
+    }
+}
 
 
 

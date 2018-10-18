@@ -1,42 +1,39 @@
 ﻿$(document).ready(function ()
 {
 
-    //$("#btnClear").click(function () {
-    //    $("#num1, #num2, #num3, #num4, #num5").val("");
-    //    $("#output1, #output2, #output3, #output4, #output5").html("");
-    //});
+    $("#MathCode").hide();
 
-    //$("#btnClearPal").click(function () {
-    //    $("#PalindromeWord").val("");
-    //});
+    $("#PalCode").hide();
 
-    //$("#btnClearFact").click(function () {
-    //    $("#FactorialNumber").val("");
-    //});
+    $("#FactCode").hide();
 
-    //$("#btnClearBuzz").click(function () {
-    //    $("#BuzzNum").val("");
-    //});
+    $("#FizzBuzzCode").hide();
 
-    //$("#btnClearFizz").click(function () {
-    //    $("#FizzNum").val("");
-    //});
 
     $("#btnClear").click(function () {
         $("#num1, #num2, #num3, #num4, #num5").val("");
-        $("#output1, #output2, #output3, #output4, #output5").val("");
-        $("#btnShowMathCode").hide("");
-        $("#PalindromeWord").text("");
-        $("#palout").text("");
-        $("#btnShowPalCode").hide("");
+        $("#output1, #output2, #output3, #output4, #output5").html("");
+    });
+
+    $("#btnClearPal").click(function () {
+        $("#PalindromeWord").val("");
+        $("#palout").val("");
+    });
+
+    $("#btnClearFact").click(function () {
         $("#FactorialNumber").val("");
         $("#factout").val("");
-        $("#btnShowFactCode").hide("");
+    });
+
+    $("#btnClearFizzBuzz").click(function () {
         $("FizzNum").val("");
         $("BuzzNum").val("");
-        $("FizzBuzzOut").text("");
-        $("#btnShowFizzBuzzCode").hide("");
+        $("FizzBuzzOut").val("");
+    });
 
+    $("#btnClearMath").click(function () {
+        $("#num1, #num2, #num3, #num4, #num5").val("");
+        $("#output1, #output2, #output3, #output4, #output5").val("");
     });
 
     $("#btnCalc").click(function () {
@@ -115,12 +112,12 @@
 
     $("#btnFB").click(function () {
 
-        var FizzNum = $("#FizzNum").val();
-        var BuzzNum = $("#BuzzNum").val();
+        var FizzNum = Number($("#FizzNum").val());
+        var BuzzNum = Number($("#BuzzNum").val());
 
-        if (FizzNum < 0 || FizzNum > 100 || BuzzNum < 0 || BuzzNum > 100)
+        if (FizzNum <= 0 || FizzNum >= 100 || BuzzNum <= 0 || BuzzNum >= 100 || FizzNum === "" || BuzzNum === "")
         {
-            swal("Please Enter 2 Numbers in the Number Boxes that are Greater than 0 and less than 100")
+            swal("Please Enter 2 Numbers in the Boxes that are each Greater than 0 and less than 100")
         }
         else
         {

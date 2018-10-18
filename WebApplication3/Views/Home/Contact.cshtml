@@ -1,7 +1,165 @@
-﻿
+﻿@{
+    Layout = null;
+}
+@model WebApplication3.Models.EmailModel
 @{
     ViewBag.Title = "Contact";
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-6">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>CMPH Portfolio</title>
 
-<h2>Contact</h2>
+    <!--Syntax Highlighter-->
+    <script src="~/Scripts/SyntaxHighlighter/scripts/shCore.js"></script>
+    <script src="~/Scripts/SyntaxHighlighter/scripts/shBrushJScript.js"></script>
 
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/freelancer.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/SyntaxHighlighter/shCore.css" rel="stylesheet" />
+    <link href="~/Content/SyntaxHighlighter/shThemeDefault.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="icon" href="~/img/FaviconImage.png" />
+</head>
+<body id="page-top" class="index">
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>Menu<i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">Conall Hayes</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top">Conall Hayes</a>modal
+                    </li>
+                    <li class="page-scroll">
+                        @Html.ActionLink("Home", "Index", "Home")
+                    </li>
+                    <li class="page-scroll">
+                        <a href="https://blogproject2.azurewebsites.net" target="_blank" />My Blog Website</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Contact</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col-lg-2">
+            </div>
+            <div class="col-lg-8">
+                @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @id = "contactForm" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h4 class="text-center">Send Me A Message</h4>
+                    <hr />
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.FromName, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.FromName, new { @class = "form-control", placeholder = "Example Name" })
+                            @Html.ValidationMessageFor(m => m.FromName)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Subject, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", placeholder = "Example Subject" })
+                            @Html.ValidationMessageFor(m => m.Subject)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Body, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Body, new { @class = "form-control", placeholder = "Example Body" })
+                            @Html.ValidationMessageFor(m => m.Body)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.FromEmail, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control", placeholder = "example@email.com" })
+                            @Html.ValidationMessageFor(m => m.FromEmail)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            @*<input type="submit" class="btn btn-primary" value="Send" />*@
+                            <button id="btnContact" class="btn-danger">Send</button>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class=" col-lg-2">
+
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="~/Scripts/jqBootstrapValidation.js"></script>
+    <script src="~/Scripts/contact_me.js"></script>
+
+
+    <!-- Theme JavaScript -->
+    <script src="~/Scripts/freelancer.min.js"></script>
+    <script src="~/Scripts/JavaScript.js"></script>
+
+    <!--Sweetalert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+    <script>
+        SyntaxHighlighter.all();
+    </script>
+
+</body>
+</html>
+
+
+@section scripts{
+    <script>
+        $('#btnContact').on('click', function () {
+            $('#contactForm').submit();
+        });
+
+    </script>
+
+}
