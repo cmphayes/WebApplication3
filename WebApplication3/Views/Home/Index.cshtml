@@ -60,7 +60,7 @@
                         @Html.ActionLink("Contact", "Contact", "Home")
                     </li>
                     <li class="page-scroll">
-                        <a href="https://blogproject2.azurewebsites.net" target="_blank" />My Blog Website</a>
+                        <a href="https://conallsblog.azurewebsites.net" target="_blank" />My Blog Website</a>
                     </li>
                 </ul>
             </div>
@@ -68,21 +68,25 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+
     <!-- Header -->
     <header>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="img-responsive centered"><a href="profile.html"><img src="~/img/portfolio/Conall Hayes_bw.jpg" class="img-circle" width="300"></a></p>
+                    <p class="page-scroll centered"><a href="#about"><img src="~/img/portfolio/Conall Hayes_bw.jpg" class="img-circle" width="400"></a></p>
                     <div class="intro-text">
                         <span class="name">Conall Hayes Portfolio</span>
                         <hr class="star-light">
-                        <span class="skills"></span>
+                        <span class="skills">
+                            <a class="btn btn-default" href="~/img/Conall Hayes.pdf" target="_blank">My CV</a>
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+
     <!-- Portfolio Grid Section -->
     <section id="portfolio">
         <div class="container">
@@ -96,7 +100,7 @@
             <div class="row">
                 <div class="col-sm-6 portfolio-item">
                     <h4 class="text-center">Blog</h4>
-                    <a href="https://blogproject2.azurewebsites.net" class="portfolio-link" target="_blank">
+                    <a href="https://conallsblog.azurewebsites.net" class="portfolio-link" target="_blank">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-1x">My Personal Blog</i>
@@ -252,24 +256,38 @@
             </div>
             <div class="row">
                 <div class="col-lg-centered-8"
-                    <h5>Welcome to my portfolio!</h5>
-                    <h5>On this site you can see a few of the projects I have created during my time at Coder Foundry.</h5>
-                    <hr/>
-                    <h5>First is a custom blog site equipped with User Login/Registery, SMTP abilities, Blog creation and edit, and a Blog Comments section.</h5>
-                    <h5>The next item in my portfolio page is a bug tracker website that builds on the skills learned while constructing my previously mentiond blog site. Included in the features is the ability to create, edit, and delete Projects, Tickets, Comments and Histories.</h5>
-                    <h5>My final four projects are a Math Calculator that preforms simple equations, a Palindrome tester, a Factorial Calculator, and a program named FizzBuzz that determines which numbers between 1 and 100 are divisible by user entered numbers.</h5>
-                    <hr/>
-                    <h5>A little bit about me.</h5>
-                    <h5>I am a junior developer currently studying at Coder Foundry in Kernervsille....</h5>
+                <h5>Welcome to my portfolio!</h5>
+                <h5>On this site you can see a few of the projects I have created during my time at Coder Foundry.</h5>
+                <hr/>
+                <h5>First is a custom blog site equipped with User Login/Registery, SMTP abilities, Blog creation and edit, and a Blog Comments section.</h5>
+                <h5>The next item in my portfolio page is a bug tracker website that builds on the skills learned while constructing my previously mentiond blog site. Included in the features is the ability to create, edit, and delete Projects, Tickets, Comments and Histories.</h5>
+                <h5>My final four projects are a Math Calculator that preforms simple equations, a Palindrome tester, a Factorial Calculator, and a program named FizzBuzz that determines which numbers between 1 and 100 are divisible by user entered numbers.</h5>
+                <hr/>
+                <h5>A little bit about me.</h5>
+                <h5>I graduated from Grimsley High School class of 2009 and spent two semesters at UNC Charlotte studying business.
+                After leaving College I began my career in the hotel and restaurant business. Having worked in the service industry
+                for ten years as both front of house and back of house, I have decided that it is now time to choose a new career path.
+                Because of my age and lack of funds, Coder Foundry was an practical and inexpensive alternative to a traditional four year school. 
+                One year after completion of this program I will hopefully be working a job using and building on the skills in learn in this
+                12 week class.  I am not particular when it comes to where I will work and live. The prospect of increased income is not as
+                enticing as the freedom of movement that I believe this course of study will allow. Ideally after a few years of working in
+                my new field I will be able to land a job working remotely and this will allow me to pursue my passion of travel.
+                Having traveled Europe, Africa, and North America, I have have come to believe that continued exposure to other cultures
+                will help me grow as a person. I feel very fortunate that I have had the ability to have these experiences and I consider
+                these trips to have been very formative for me both as a youth and as an adult. In some ways I believe travel can be a more
+                educational experience than even formal education.  I am fairly unaware as to what to expect upon securing a new job but
+                I am certain that it will be far better in many if not most regards than my previous positions.  I am not positive that a
+                job in the corporate world is right for me but I am willing to accept an offer that will allow me further my career and reach
+                my goal of one day owning my own business or at the very least being self employed.</h5>
                 </div>
                 <div class="col-lg-4">
                     <p></p>
                 </div>
                 @*<div class="col-lg-8 col-lg-offset-2 text-center">
-                          <a href="#" class="btn btn-lg btn-outline">
-                              <i class="fa fa-download"></i>
-                          </a>
-                    </div>*@
+              <a href="#" class="btn btn-lg btn-outline">
+                  <i class="fa fa-download"></i>
+              </a>
+        </div>*@
             </div>
         </div>
     </section>
@@ -370,8 +388,8 @@
                         </div>
                         <br />
                         <br />
-                        <div class="row" id="MathCode">
-                            <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-12" id="MathCode">
                                 <pre class="brush: js">
                                    $("#btnCalc").click(function () {
 
